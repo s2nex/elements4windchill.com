@@ -2,20 +2,53 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script>
+
+	$(document).ready(function() {
+
+    $('#background').click(function() {
+      	close();
+      });
+    });
+
+	function open(picture){
+		if(picture != null){
+		$('#background').css('opacity','0.5');
+		$('#show').css('opacity','1.00');
+		$('#background, #show').css('display', 'block');
+		$('#show').html("<img src='images/productflyer-"+picture+".jpg' onLoad='size()'>");
+		}
+	}
+
+	function close()
+	{
+		$('#background, #show').css('opacity','0');
+		$('#background, #show').css('display', 'none');
+		$('#show').html("");
+		$('#background').css("height","100%");
+	}
+
+	function size(){
+		var height = $(document).height();
+		$('#background').css("height",height+50);
+	}
+
+</script>
 </head>
 <body>
-
-
+<div id="background" ></div>
 <div id="wrapper">
-
+	<div class="clear" ></div>
+	<div id="show"></div>
 	<div class="cols">
 		<div class="logo"><div><img src="images/nexileslogo.png"></div></div>
 		<div class="products">
-			<div class="ppicture"><a href="#"><img src="images/nexiles-fi.png"  width="100" alt="ppicture"></a></div>
-			<div class="ppicture"><a href="#"><img src="images/nexiles-fi.png"  width="100" alt="ppicture"></a></div>
-			<div class="ppicture"><a href="#"><img src="images/nexiles-fi.png"  width="100" alt="ppicture"></a></div>
-			<div class="ppicture"><a href="#"><img src="images/nexiles-fi.png"  width="100" alt="ppicture"></a></div>
-			<div class="ppicture"><a href="#"><img src="images/nexiles-fi.png"  width="100" alt="ppicture"></a></div>
+			<div class="ppicture"><a href="javascript:open('FI ')"><img src="images/nexiles-fi.png"  width="100" alt="ppicture"></a></div>
+			<div class="ppicture"><a href="javascript:open('CO')"><img src="images/nexiles-fi.png"  width="100" alt="ppicture"></a></div>
+			<div class="ppicture"><a href="javascript:open('KN')"><img src="images/nexiles-fi.png"  width="100" alt="ppicture"></a></div>
+			<div class="ppicture"><a href="javascript:open('PB')"><img src="images/nexiles-fi.png"  width="100" alt="ppicture"></a></div>
+			<div class="ppicture"><a href="javascript:open('ST')"><img src="images/nexiles-fi.png"  width="100" alt="ppicture"></a></div>
 			<div class="clear"></div>
 		</div>
 		<div class="text">
@@ -37,7 +70,6 @@
 			<a href="http://www.sulis.de" target="_blank" class="blue">www.sulis.de</a>
 		</div>
 	</div>
-	<div class="clear" ></div>
 </div>
 
 

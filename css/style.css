@@ -84,3 +84,32 @@ a:hover img {
 .blue {
 	color: #44a6cd;
 }
+
+#background
+{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background:#000;
+	opacity: 0.5;
+	filter:alpha(opacity=0.5);
+	z-index:1;
+	display:none;
+}
+
+
+#show
+{
+	position:absolute;
+	top:1;
+	left:30%;
+	background:#ffffff;
+	z-index:2;
+	padding:10px;
+	-moz-box-shadow:0px 0px 5px #444444;
+	-webkit-box-shadow:0px 0px 5px #444444;
+	box-shadow:0px 0px 5px #444444;
+	display:none;
+}
